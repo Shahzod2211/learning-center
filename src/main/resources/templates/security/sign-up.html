@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign up</title>
+    <link href="../../static/css/style.css" rel="stylesheet" th:href="@{../../css/style.css}"/>
+</head>
+<body>
+<div class="center-form">
+    <form class="search-form" method="post" th:action="@{/user/sign-up}">
+        <input class="input" type="text" placeholder="PhoneNumber" name="phoneNumber">
+        <input class="input" type="password" placeholder="Password" name="password">
+        <select class="input" id="" name="role">
+            <option th:each="role: ${T(com.example.learningcenter.user.enums.Role).values()}"
+                    th:text="${role}"
+                    th:value="${role}"
+            ></option>
+        </select>
+        <button class="btn secondary" type="submit">Sign Up</button>
+    </form>
+</div>
+</body>
+</html>
